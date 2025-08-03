@@ -17,13 +17,39 @@ header h1 {
     margin: 0;
 }
 
-#categorySearch {
-    padding: 8px;
-    margin-top: 10px;
+.search-container {
+    position: relative;
     width: 80%;
     max-width: 400px;
+    margin: 10px auto 0 auto; /* Center the container */
+}
+
+#categorySearch {
+    padding: 8px;
+    /* margin-top: 10px; */ /* Removed as it's now handled by .search-container margin */
+    width: calc(100% - 30px); /* Adjust width to make space for the button */
+    /* max-width: 400px; */ /* Handled by .search-container max-width */
     border: 1px solid #ddd;
     border-radius: 4px;
+    padding-right: 30px; /* Space for the button */
+}
+
+.clear-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    color: #888;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+}
+
+.clear-button:hover {
+    color: #333;
 }
 
 main {

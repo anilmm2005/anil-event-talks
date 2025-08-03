@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const scheduleContainer = document.getElementById('schedule');
     const categorySearchInput = document.getElementById('categorySearch');
+    const clearSearchButton = document.getElementById('clearSearchButton');
     let allTalks = [];
 
     const fetchTalks = async () => {
@@ -67,6 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
                    talk.speakers.some(speaker => speaker.toLowerCase().includes(searchTerm));
         });
         renderSchedule(filteredTalks);
+    });
+
+    // New event listener for the clear button
+    clearSearchButton.addEventListener('click', () => {
+        categorySearchInput.value = ''; // Clear the input
+        renderSchedule(allTalks); // Render all talks
     });
 
     fetchTalks();
