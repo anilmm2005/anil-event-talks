@@ -1,0 +1,12 @@
+{
+  "name": "my-website-gemini-cli",
+  "version": "1.0.0",
+  "description": "Website for a 1-day technical talk event",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
