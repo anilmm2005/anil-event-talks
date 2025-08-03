@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
     categorySearchInput.addEventListener('keyup', (event) => {
         const searchTerm = event.target.value.toLowerCase();
         const filteredTalks = allTalks.filter(talk => {
-            return talk.category.some(cat => cat.toLowerCase().includes(searchTerm));
+            return talk.category.some(cat => cat.toLowerCase().includes(searchTerm)) ||
+                   talk.speakers.some(speaker => speaker.toLowerCase().includes(searchTerm));
         });
         renderSchedule(filteredTalks);
     });
