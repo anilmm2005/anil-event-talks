@@ -61,6 +61,14 @@ main {
     border-radius: 8px;
 }
 
+.loading-indicator {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #555;
+    display: none; /* Initially hidden */
+}
+
 .talk-entry {
     border-bottom: 1px solid #eee;
     padding: 15px 0;

@@ -2,9 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const scheduleContainer = document.getElementById('schedule');
     const categorySearchInput = document.getElementById('categorySearch');
     const clearSearchButton = document.getElementById('clearSearchButton');
+    const loadingIndicator = document.getElementById('loadingIndicator');
     let allTalks = [];
 
     const fetchTalks = async () => {
+        loadingIndicator.style.display = 'block'; // Show loading indicator
         try {
             const response = await fetch('/api/talks');
             allTalks = await response.json();
@@ -12,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error fetching talks:', error);
             scheduleContainer.innerHTML = '<p>Error loading schedule. Please try again later.</p>';
+        } finally {
+            loadingIndicator.style.display = 'none'; // Hide loading indicator
         }
     };
 
